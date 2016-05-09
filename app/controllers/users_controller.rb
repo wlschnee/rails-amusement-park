@@ -6,21 +6,21 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    redirect_to @user
-  end
-
-  def signin
-  end
-
-  def authenticate
-    redirect_to @user
+    @user = User.new(user_params)
+    @user.save
+    user_reg
   end
 
   def show
   end
 
   private
+  def user_reg
+    if @user
+      session[:user_id] = @user.id
+      redirect_to @user
+    end
+  end
 
   def select_user
     @user = User.find(params[:id])

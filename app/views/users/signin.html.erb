@@ -1,5 +1,0 @@
-<%= form_tag signin_path, method: "post" do %>
-  <%= label_tag :name %>
-  <%= select_tag :id, options_from_collection_for_select(User.all, :id, :name), include_blank: true %>
-  <%= submit_tag "Sign in" %>
-<% end %>
