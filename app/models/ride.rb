@@ -15,6 +15,7 @@ class Ride < ActiveRecord::Base
       user.nausea += attraction.nausea_rating
       user.happiness += attraction.happiness_rating
       user.save
+      "Thanks for riding the #{attraction.name}!"
     elsif !(user.tickets > attraction.tickets) && !(user.height > attraction.min_height)
       "Sorry. You do not have enough tickets the #{attraction.name}. You are not tall enough to ride the #{attraction.name}."
     elsif user.tickets > attraction.tickets && !(user.height > attraction.min_height)

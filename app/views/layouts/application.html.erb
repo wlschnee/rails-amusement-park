@@ -13,6 +13,10 @@
   <%= render "layouts/navbar" %>
     <!-- content -->
     <div class="container"  role="main">
+      <% flash.each do |type, message| %>
+     <div class="alert alert-<%= type %>" role="alert"><%= message %></div>
+   <% end %>
+
       <%= yield %>
     </div>
 
