@@ -1,0 +1,20 @@
+<div class="">
+  <table>
+    <tr>
+      <th>
+        Name
+      </th>
+      <th>
+        Tickets
+      </th>
+      <th>
+        Details
+      </th>
+    </tr>
+    <%= render @attractions %>
+  </table>
+</div>
+
+<% if @user.admin %>
+  <%= link_to "New Attraction", new_attraction_path %>
+<% end %>
